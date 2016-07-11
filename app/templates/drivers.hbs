@@ -1,0 +1,62 @@
+<h1>Drivers Information</h1>
+<div style="width:100%">
+
+    {{#each model as |item|}}
+        <table class="table">
+            <thead>
+            <tr>
+                <td class="col-xs-3"></td>
+                <td class="col-xs-9"></td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td class="bold">ID:</td>
+                <td> {{item.id}}</td>
+            </tr>
+            <tr>
+                <td class="bold">Name:</td>
+                <td> {{item.name}}</td>
+            </tr>
+            <tr>
+                <td class="bold">License_id</td>
+                <td>{{item.license_id}}</td>
+            </tr>
+            <tr>
+                <td class="bold">Age:</td>
+                <td>{{item.age}}</td>
+            </tr>
+            <tr>
+                <td class="bold">Gender:</td>
+                <td>{{item.gender}}</td>
+            </tr>
+            <tr>
+                <button class="btn btn-sm btn-primary navbar-secondary-btn" {{action 'remove' item.id}}>Remove
+                </button>
+            </tr>
+            </tbody>
+        </table>
+    {{/each}}
+
+</div>
+
+
+<div class="form-group col-md-6 has-feedback">
+    <label>Driver ID</label>
+    {{input value=drivers_id type='text' class='form-control' placeholder='Enter drivers id'}}
+    <label>Driver Name</label>
+    {{input value=drivers_name type='text' class='form-control' placeholder='Enter drivers name'}}
+    <label>Driver License ID</label>
+    {{input value=drivers_license_id type='text' class='form-control' placeholder='Enter drivers license id'}}
+    <label>Driver Age</label>
+    {{input value=drivers_age type='text' class='form-control' placeholder='Enter drivers age'}}
+    <label>Driver Gender</label>
+    {{input value=drivers_gender type='text' class='form-control' placeholder='Enter drivers gender'}}
+</div>
+<div class="pane-actions">
+    <ul class="list-h pull-right">
+        <li style="list-style-type:none">
+            <button class="btn btn-sm btn-primary navbar-secondary-btn" {{action 'add'}}>Add</button>
+        </li>
+    </ul>
+</div>

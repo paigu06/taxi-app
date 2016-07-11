@@ -1,0 +1,68 @@
+<h1>Here is the schedule</h1>
+{{outlet}}
+
+
+
+{{#each model as |item|}}
+    <table class="table">
+        <thead>
+        <tr>
+            <td class="col-xs-3"></td>
+            <td class="col-xs-9"></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="bold">ID:</td>
+            <td> {{input value=item.id type='text' class='form-control' placeholder=item.id}}</td>
+        </tr>
+        <tr>
+            <td class="bold">driver_id:</td>
+            <td> {{input value=item.driver_id type='text' class='form-control' placeholder=item.driver_id}}</td>
+        </tr>
+        <tr>
+            <td class="bold">vehicles_id:</td>
+            <td>{{input value=item.vehicles_id type='text' class='form-control' placeholder=item.vehicles_id}}</td>
+        </tr>
+        <tr>
+            <td class="bold">date:</td>
+            <td>{{input value=item.date type='text' class='form-control' placeholder=item.date}}</td>
+        </tr>
+        <tr>
+            <td>
+                <button class="btn btn-sm btn-primary navbar-secondary-btn" {{action 'remove' item.id}}>
+                    Remove
+                </button>
+            </td>
+            <td>
+                <button class="btn btn-sm btn-primary navbar-secondary-btn" {{action 'update' item}}>
+                    Update
+                </button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+{{/each}}
+
+
+<div class="form-group col-md-6 has-feedback">
+    <label>Please type the available Drivers ID</label>
+    {{input value=schedule_drivers_id type='text' class='form-control' placeholder='Enter Driver ID'}}
+    <label>Please type the Vehicles ID</label>
+    {{input value=schedule_vehicles_id type='text' class='form-control' placeholder='Enter Vehicles ID'}}
+    <label>Please type the Date as the same format as the example</label>
+    {{input value=schedule_date type='text' class='form-control' placeholder='2016-12-30'}}
+</div>
+
+<div class="pane-actions">
+    <ul class="list-h pull-right">
+        <li style="list-style-type:none">
+            <button class="btn btn-sm btn-primary navbar-secondary-btn"  {{action 'add'}}>Add</button>
+        </li>
+    </ul>
+</div>
+
+
+
+
+

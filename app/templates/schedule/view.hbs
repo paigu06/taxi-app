@@ -1,0 +1,28 @@
+<h4>Here is the schedule for the vehicle</h4>
+
+<div>
+    <table class="table .table-striped">
+        <thead>
+        <tr>
+            <td class="col-xs-3"></td>
+            <td class="col-xs-9"></td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td class="bold">Vehicles ID:</td>
+            <td class="strong"> {{schedule.vehicles_id}}</td>
+        </tr>
+        <tr>
+            <td class="bold">Driver ID:</td>
+            <td> {{schedule.driver_id}}</td>
+        </tr>
+        <tr>
+            <td class="bold">Date</td>
+            <td>{{schedule.date}}</td>
+        </tr>
+        {{!-- {{#link-to 'vehicles.index.view' item.id tagName="li"}}<a>schedule</a>{{/link-to}}{{outlet}}--}}
+        </tbody>
+    </table>
+    </div>
+
