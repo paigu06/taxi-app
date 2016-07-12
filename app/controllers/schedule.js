@@ -4,6 +4,10 @@ import config from 'taxi-app/config/environment';
 export default Ember.Controller.extend( {
     needs: [ 'application' ],
     item: '',
+    schedule_drivers_id:'',
+    schedule_vehicles_id:'',
+    schedule_date:'',
+
     actions: {
         add: function(){
             var self = this;
@@ -13,7 +17,7 @@ export default Ember.Controller.extend( {
                 date: self.get( 'schedule_date' )
             };
             Ember.$.ajax( {
-                url: config.APP.api_host + '/schedules/' + '/add',
+                url: config.APP.api_host + '/schedule/add' ,
                 type: 'post',
                 contentType: "application/json; charset=utf-8",
                 dataType: 'json',
